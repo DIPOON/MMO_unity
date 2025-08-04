@@ -9,21 +9,17 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
+        Managers.Input.KeyAction -= OnKeyboard; // 두번 호출되지 않도록 이미 있는 것 정리
+        Managers.Input.KeyAction += OnKeyboard;
+    }
+
+    void Update()
+    {
         
     }
 
-    float _yAngle = 0.0f;
-    void Update()
+    void OnKeyboard()
     {
-        // 절대 회전값
-        _yAngle += Time.deltaTime * 100.0f;
-        //transform.eulerAngles = new Vector3(0.0f, _yAngle, 0.0f);
-        
-        // +- delta
-        //transform.Rotate(new Vector3(0.0f, Time.deltaTime * 100.0f, 0.0f));
-
-        //transform.rotation = Quaternion.Euler(new  Vector3(0.0f, _yAngle, 0.0f));
-
         if (Input.GetKey(KeyCode.W))
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward), 0.2f); // slerp 값은 delta time 을 넣는 것이 권장됨
