@@ -28,14 +28,7 @@ public class TestCollision : MonoBehaviour
 
     void Update()
     {
-        Vector3 look = transform.TransformDirection(Vector3.forward);
-        Debug.DrawRay(transform.position + Vector3.up, look * 10, Color.red);
-        RaycastHit[] hits;
-        hits = Physics.RaycastAll(transform.position + Vector3.up, look, 10);
-
-        foreach (RaycastHit hit in hits)
-        {
-            Debug.Log($"Raycast! {hit.collider.gameObject.name}");
-        }
+        // Debug.Log(Input.mousePosition); // Screen 픽셀
+        Debug.Log(Camera.main.ScreenToViewportPoint(Input.mousePosition)); // Viewport 화면 비율
     }
 }
