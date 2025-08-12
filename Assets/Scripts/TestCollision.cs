@@ -36,11 +36,15 @@ public class TestCollision : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             
             Debug.DrawRay(Camera.main.transform.position, ray.direction * 100.0f, Color.red, 1.0f);
+
+            LayerMask mask = LayerMask.GetMask("Monster") | LayerMask.GetMask("Wall");
+            // int mask = (1 << 8) |  (1 << 9);
+            
             RaycastHit hit;
             
-            if (Physics.Raycast(ray, out hit, 100.0f))
+            if (Physics.Raycast(ray, out hit, 100.0f, mask))
             {
-                Debug.Log($"Raycast Camera @ {hit.collider.gameObject.name}");
+                Debug.Log($"Raycast Camera @ {hit.collider.gameObject.tag}");
             }
             
             // Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,
