@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
             {
                 float moveDist = Mathf.Clamp(_speed * Time.deltaTime, 0, dir.magnitude); // 이동할 거리가 갈 방향보다 넘어가면 끝지점에서 바둥댐
                 transform.position += dir.normalized * moveDist;
-                transform.LookAt(_destPos);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 10 * Time.deltaTime);
             }
         }
     }
