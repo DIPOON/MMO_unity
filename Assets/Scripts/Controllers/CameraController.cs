@@ -22,9 +22,23 @@ public class CameraController : MonoBehaviour
     {
         if (_mode == Define.CameraMode.QuarterView)
         {
-            // 플레이어 기준으로 특정 위치 - 플레이어 가져오는 방법은 태그로 가져올 수도 있고 드래그 드롭으로 가져올 수도 있음
-            transform.position = _player.transform.position + _delta;
-            transform.LookAt(_player.transform);            
+            
+            RaycastHit hit;
+            if (Physics.Raycast(_player.transform.position, _delta, out hit, _delta.magnitude,
+                    LayerMask.GetMask("Wall")))
+            {
+                // 카메라와 플레이어 사이에 물체가 있으면 카메라 앞당기기
+                float dist = (hit.point - _player.transform.position).magnitude * 0.8f;
+                transform.position = _player.transform.position + _delta.normalized * dist;
+            }
+            else
+            {
+                // 플레이어 기준으로 특정 위치 - 플레이어 가져오는 방법은 태그로 가져올 수도 있고 드래그 드롭으로 가져올 수도 있음
+                transform.position = _player.transform.position + _delta;
+                transform.LookAt(_player.transform);     
+            }
+            
+                   
         }
     }
 
