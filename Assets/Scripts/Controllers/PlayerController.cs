@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour
         Managers.Input.MouseAction += OnMouseClicked;
     }
 
-    private float wait_run_ratio = 0;
-
     public enum PlayerState
     {
         Die,
@@ -46,18 +44,12 @@ public class PlayerController : MonoBehaviour
         
         // 애니메이션
         Animator animator = GetComponent<Animator>();
-        wait_run_ratio = Mathf.Lerp(wait_run_ratio, 1, 10.0f * Time.deltaTime);
-        animator.SetFloat("wait_run_ratio", wait_run_ratio);
-        animator.Play("WAIT_RUN");    
     }
 
     void UpdateIdle()
     {
         // 애니메이션
         Animator animator = GetComponent<Animator>();
-        wait_run_ratio = Mathf.Lerp(wait_run_ratio, 0, 10.0f * Time.deltaTime);
-        animator.SetFloat("wait_run_ratio", wait_run_ratio);
-        animator.Play("WAIT_RUN");
     }
     
     PlayerState _state = PlayerState.Idle;
