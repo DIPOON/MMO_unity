@@ -188,6 +188,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnityChan
       objectReference: {fileID: 0}
+    - target: {fileID: 1684069576857744005, guid: 1a1802b6152d4ed4093cff76ff3d6fb8,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684069576857744011, guid: 1a1802b6152d4ed4093cff76ff3d6fb8,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684069576857744023, guid: 1a1802b6152d4ed4093cff76ff3d6fb8,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684069576861813827, guid: 1a1802b6152d4ed4093cff76ff3d6fb8,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 39c8f218cc4e9bd4485a23a7b497a0dd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a1802b6152d4ed4093cff76ff3d6fb8, type: 3}
 --- !u!1 &267762646

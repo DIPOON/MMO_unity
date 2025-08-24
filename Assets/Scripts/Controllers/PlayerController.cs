@@ -35,6 +35,16 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 10 * Time.deltaTime);
             }
         }
+        
+        Animator animator = GetComponent<Animator>();
+        if (_moveToDest)
+        {
+            animator.Play("RUN");    
+        }
+        else
+        {
+            animator.Play("WAIT");            
+        }
     }
 
     void OnKeyboard()
@@ -67,9 +77,6 @@ public class PlayerController : MonoBehaviour
 
     void OnMouseClicked(Define.MouseEvent evt)
     {
-        if (evt != Define.MouseEvent.Click)
-            return;
-        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(Camera.main.transform.position, ray.direction * 100.0f, Color.red, 1.0f);
         LayerMask mask = LayerMask.GetMask("Wall");
