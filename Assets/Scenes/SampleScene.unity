@@ -3086,6 +3086,7 @@ GameObject:
   - component: {fileID: 1990437408}
   - component: {fileID: 1990437407}
   - component: {fileID: 1990437411}
+  - component: {fileID: 1990437412}
   m_Layer: 8
   m_Name: Cube Two
   m_TagString: Monster
@@ -3186,6 +3187,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1990437412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990437406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676a624323ebada4e8fd42fed0a2a0bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7924060749850021769
 PrefabInstance:
   m_ObjectHideFlags: 0
