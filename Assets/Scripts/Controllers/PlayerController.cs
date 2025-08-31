@@ -48,11 +48,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("speed", _speed);
     }
 
-    void OnRunEvent()
-    {
-        Debug.Log("뚜벅 뚜벅");
-    }
-
     void UpdateIdle()
     {
         // 애니메이션
