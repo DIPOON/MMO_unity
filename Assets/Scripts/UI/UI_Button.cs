@@ -13,6 +13,6 @@ public class UI_Button : MonoBehaviour
     public void OnButtonClicked()
     {
         _score++;
-        _text.text = $"점수 : {_score}";
+        _text.text = $"점수 : {_score}점";
     }
 }
